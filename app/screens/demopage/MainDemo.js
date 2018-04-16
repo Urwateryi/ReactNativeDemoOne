@@ -9,6 +9,9 @@ import {
     View,
     Text
 } from 'react-native';
+
+import {Actions} from 'react-native-router-flux'
+
 import ImageBackGroundDemo from "./widgets/ImageBackGroundDemo";
 import InputDemo from "./widgets/InputDemo";
 import RefDemo from "./widgets/RefDemo";
@@ -16,140 +19,140 @@ import StorageDemo from "./widgets/StorageDemo";
 
 import Colors from '../../resources/Colors'
 import TxtPicPageDemo from "./widgets/TxtPicPageDemo";
-import {jumpPager} from "../../utils/PageUtil";
 import AnimateDemo from "./widgets/AnimateDemo";
 import LifeCycleDemo from "./widgets/LifeCycleDemo";
 import { RnAndroidCommunicationDemo } from "./widgets/RnAndroidCommunicationDemo";
 import SkipDemo from "./widgets/SkipDemo";
+// import RouterFluxDemo from "./widgets/RouterFluxDemo";
 
 var strList=[
     {
         key:'Text',
-        content:'TextDemo'
+        action:'TextDemo'
     },
     {
         key:'Image',
-        content:'ImageDemo'
+        action:'ImageDemo'
     },
     {
         key:'Camera',
-        content:''
+        action:''
     },
     {
         key:'ImageBackground ',
-        content:'ImageBackGroundDemo'
+        action:'ImageBackGroundDemo'
     },
     {
         key:'Input',
-        content:'InputDemo'
+        action:'InputDemo'
     },
     {
         key:'Button',
-        content:'ButtonDemo'
+        action:'ButtonDemo'
     },
     {
         key:'ScrollView',
-        content:'ScrollViewDemo'
+        action:'ScrollViewDemo'
     },
     {
         key:'RouterFlux',
-        content:'RouterFluxDemo'
+        action:'RouterFluxDemo'
     },
     {
         key:'Ref',
-        content:'RefDemo'
+        action:'RefDemo'
     },
     {
         key:'WebView',
-        content:'WebViewDemo'
+        action:'WebViewDemo'
     },
     {
         key:'Storage',
-        content:'StorageDemo'
+        action:'StorageDemo'
     },
     {
         key:'Picker',
-        content:'PickerDemo'
+        action:'PickerDemo'
     },
     {
         key:'Refresh',
-        content:'RefreshDemo'
+        action:'RefreshDemo'
     },
     {
         key:'CheckBox',
-        content:'CheckBoxDemo'
+        action:'CheckBoxDemo'
     },
     {
         key:'Toast',
-        content:'ToastDemo'
+        action:'ToastDemo'
     },
     {
         key:'Video',
-        content:'VideoDemo'
+        action:'VideoDemo'
     },
     {
         key:'Media',
-        content:'MediaDemo'
+        action:'MediaDemo'
     },
     {
         key:'Swiper',
-        content:'SwiperDemo'
+        action:'SwiperDemo'
     },
     {
         key:'长列表FlatList',
-        content:'FlatListDemo'
+        action:'FlatListDemo'
     },
     {
         key:'分组列表SectionList',
-        content:'SectionListDemo'
+        action:'SectionListDemo'
     },
     {
         key:'图文列表',
-        content:'TxtPicPageDemo'
+        action:'TxtPicPageDemo'
     },
     {
         key:'页面跳转，数据回传',
-        content:'SkipDemo'
+        action:'SkipDemo'
     },
     {
         key:'网络请求',
-        content:'NetDemo'
+        action:'NetDemo'
     },
     {
         key:'生命周期',
-        content:'LifeCycleDemo'
+        action:'LifeCycleDemo'
     },
     {
         key:'动画',
-        content:'AnimateDemo'
+        action:'AnimateDemo'
     },
     {
         key:'进度圈',
-        content:'AnimateDemo'
+        action:'AnimateDemo'
     },
     {
         key:'自定义控件',
-        content:'CustomCompontDemo'
+        action:'CustomCompontDemo'
     },
     {
         key:'聚合页面',
-        content:'此页面主要测试聚合页面'
+        action:'此页面主要测试聚合页面'
     },
     {
         key:'与Android交互',
-        content:'RnAndroidCommunicationDemo'
+        action:'RnAndroidCommunicationDemo'
     },
     {
         key:'与iOS交互',
-        content:'此页面主要测试与原生iOS交互'
+        action:'此页面主要测试与原生iOS交互'
     },
     {
         key:'热更新',
-        content:'此页面主要测试与原生iOS交互'
+        action:'此页面主要测试与原生iOS交互'
     },
     {
         key:'打包',
-        content:'PickUpDemo'
+        action:'PickUpDemo'
     },
 ];
 
@@ -172,7 +175,7 @@ export default class MainDemo extends PureComponent{
     //列表的每一行
     renderItem({item}) {
         return (
-            <TouchableOpacity activeOpacity={1} onPress={this.clickItem.bind(this,item)}>
+            <TouchableOpacity activeOpacity={1} onPress={()=>this.clickItem(item)}>
                 <Text style={styles.item}>{item.key}</Text>
             </TouchableOpacity>
         )
@@ -180,13 +183,16 @@ export default class MainDemo extends PureComponent{
 
     //点击列表点击每一行
     clickItem(item) {
-        //跳转方法一：
-        // console.log(item.content+"///"+item.key)
+        //跳转方法一（使用react-navigation）：
+        // console.log(item.action+"///"+item.key)
         // const {navigate} = this.props.navigation;
-        // navigate(item.content);
+        // navigate(item.action);
 
-        //跳转方法二：
-        jumpPager(this.props.navigation.navigate,item.content)
+        //跳转方法二（使用react-navigation）：
+        // jumpPager(this.props.navigation.navigate,item.action)
+        
+        //跳转方法三（使用flux）：
+        Actions.push(item.action)
     }
 }
 

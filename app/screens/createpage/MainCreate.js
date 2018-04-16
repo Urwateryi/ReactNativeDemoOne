@@ -13,6 +13,7 @@ import {
 
 import Colors from '../../resources/Colors'
 import { jumpPager } from "../../utils/PageUtil";
+import { Actions } from "react-native-router-flux";
 
 export default class MainCreate extends PureComponent {
     //----------------------跳转，方法1：:-------------------------------------
@@ -77,7 +78,9 @@ export default class MainCreate extends PureComponent {
         // const { navigate } = this.props.navigation;
         // navigate('TextDemo');
 
-        jumpPager(this.props.navigation.navigate,'TextDemo')
+        // jumpPager(this.props.navigation.navigate,'TextDemo')
+
+        Actions.push('TextDemo')
     }
 }
 

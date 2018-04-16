@@ -5,6 +5,7 @@ import Images from "../../../resources/Images";
 import SkipEditNamePage from "./SkipEditNamePage";
 import { jumpPager } from "../../../utils/PageUtil";
 import SkipEditAgePage from "./SkipEditAgePage";
+import { Actions } from "react-native-router-flux";
 
 /**
  * Description:页面之间的跳转，以及数据的回调
@@ -53,14 +54,16 @@ export default class SkipDemo extends PureComponent {
      * 跳转到编辑姓名页面
      */
     onSkipToEditName(content) {
-        jumpPager(this.props.navigation.navigate,'SkipEditNamePage',{name:content})
+        // jumpPager(this.props.navigation.navigate,'SkipEditNamePage',{name:content})
+        Actions.push('SkipEditNamePage',{name:content})
     }
 
     /**
      * 跳转到编辑年龄页面
      */
     onSkipToEditAge() {
-        jumpPager(this.props.navigation.navigate,'SkipEditAgePage')
+        // jumpPager(this.props.navigation.navigate,'SkipEditAgePage')
+        Actions.push('SkipEditAgePage')
     }
 }
 

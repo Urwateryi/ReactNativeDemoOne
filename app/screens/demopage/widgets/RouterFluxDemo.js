@@ -2,7 +2,7 @@
  * Description:
  */
 import React, { PureComponent } from 'react';
-import { Router, Scene, Actions } from 'react-native-router-flux';
+import { Router, Scene, Actions ,Modal } from 'react-native-router-flux';
 import {
     StyleSheet,
     Image,
@@ -41,13 +41,11 @@ export default class RouterFluxDemo extends PureComponent {
     render() {
         return (
             <Router>
-                <Modal>
-                    <Scene key="RouterFluxPage1" component={RouterFluxPage1} title="首页" initial={true}/>
-                    <Scene key="RouterFluxPage2" component={RouterFluxPage2} title="第二页标题"
-                           renderRightButton={this.renderRightButton}
-                    />
-                    <Scene key="RouterFluxPage3" component={RouterFluxPage3} title="第三页标题" back={true} backButtonImage={Images.title.ic_setting} onLeft={this.pageThreeBack}/>
-                </Modal>
+                <Scene key="fluxhome" type='replace' hideNavBar initial tabs style={styles.navigationBar}>
+                    <Scene key="RouterFluxPage1" hideBackImage component={RouterFluxPage1} title="第一页" initial={true}/>
+                    <Scene key="RouterFluxPage2" hideBackImage component={RouterFluxPage2} title="第二页"/>
+                    <Scene key="RouterFluxPage3" hideBackImage component={RouterFluxPage3} title="第三页"/>
+                </Scene>
             </Router>
         );
     }
@@ -69,5 +67,7 @@ const styles = StyleSheet.create({
         width : 20,
         height : 20,
         marginRight : 16
+    }, navigationBar : {
+        backgroundColor : 'white',
     }
 })
