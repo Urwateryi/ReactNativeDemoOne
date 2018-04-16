@@ -1,30 +1,36 @@
 /**
  * Description:
  */
+import { Actions } from 'react-native-router-flux';
 import React, { PureComponent } from 'react';
 import {
     StyleSheet,
     TouchableOpacity,
     Text,
+    View
 } from 'react-native';
 
 import Colors from '../../../resources/Colors'
-import RouterFluxDemo from "./RouterFluxDemo";
+import RouterFluxPage1 from "./RouterFluxPage1";
 
 export default class RouterFluxPage3 extends PureComponent {
 
-    onSkip = () => {
-        jumpPager(this.props.navigation.navigate, 'RouterFluxDemo')
-    }
-
     render() {
         return (
-            <TouchableOpacity
-                style={styles.container}
-                onPress={this.onSkip}
-                activeOpacity={0.5}>
-                <Text style={styles.text}>RouterFluxPage3</Text>
-            </TouchableOpacity>
+            <View style={styles.container}>
+                <TouchableOpacity
+                    onPress={Actions.pop}
+                    activeOpacity={0.5}>
+                    <Text style={styles.text}>点我返回第二页，我是第二页右上角调出我的</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                    onPress={() => {Actions.popTo('RouterFluxPage1')}}>
+                    <Text style={styles.text}>
+                        点我直接返回首页
+                    </Text>
+                </TouchableOpacity>
+            </View>
         );
     }
 }

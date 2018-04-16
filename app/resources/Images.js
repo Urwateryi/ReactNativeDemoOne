@@ -43,5 +43,9 @@ export default {
 
     other_test:{
         bg_beauty:require('./imgs/bg.jpg')
+    },
+
+    title:{
+        ic_setting:require('./imgs/ic_setting.png')
     }
 }

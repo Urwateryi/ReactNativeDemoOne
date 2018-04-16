@@ -34,6 +34,7 @@ import SkipDemo from "./app/screens/demopage/widgets/SkipDemo";
 import SkipEditNamePage from "./app/screens/demopage/widgets/SkipEditNamePage";
 import SkipEditAgePage from "./app/screens/demopage/widgets/SkipEditAgePage";
 import RouterFluxDemo from "./app/screens/demopage/widgets/RouterFluxDemo";
+import RouterFluxPage1 from "./app/screens/demopage/widgets/RouterFluxPage1";
 import RouterFluxPage2 from "./app/screens/demopage/widgets/RouterFluxPage2";
 import RouterFluxPage3 from "./app/screens/demopage/widgets/RouterFluxPage3";
 
@@ -179,8 +180,9 @@ const AllNavigator = StackNavigator(
         SkipEditNamePage:{screen:SkipEditNamePage},
         SkipEditAgePage:{screen:SkipEditAgePage},
         RouterFluxDemo:{screen:RouterFluxDemo},
-        RouterFluxPage2:{screen:RouterFluxPage2},
-        RouterFluxPage3:{screen:RouterFluxPage3}
+        // RouterFluxPage1:{screen:RouterFluxPage1},
+        // RouterFluxPage2:{screen:RouterFluxPage2},
+        // RouterFluxPage3:{screen:RouterFluxPage3}
     },
     //还可以有参数StackNavigatorConfig，这个参数主要是配置整个路由的，包括跳转动画，跳转方式等。
     {
