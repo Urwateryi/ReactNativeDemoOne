@@ -31,11 +31,14 @@ const tabIconStyles = StyleSheet.create({
         flexDirection: 'row'
     },
 });
+
 export default TabIcon=(props)=>{
+    var color = props.focused ? Colors.primary : Colors.inactiveTint
     return (
         <View style={tabIconStyles.tabIconItem}>
             <Image style={tabIconStyles.tabIconImage}
                    source={props.focused ? props.selectedImage : props.Image}/>
+
         </View>
     );
 };

@@ -19,7 +19,7 @@ export default class RouterFluxPage1 extends PureComponent {
                 style={styles.container}
                 onPress={ Actions.RouterFluxPage2}
                 activeOpacity={0.5}>
-                <Text style={styles.text}>首页</Text>
+                <Text style={styles.text}>第一页，请点击我跳转到第二页</Text>
             </TouchableOpacity>
         );
     }

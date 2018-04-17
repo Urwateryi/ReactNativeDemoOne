@@ -21,7 +21,7 @@ export default class RouterFluxPage3 extends PureComponent {
                 <TouchableOpacity
                     onPress={Actions.pop}
                     activeOpacity={0.5}>
-                    <Text style={styles.text}>点我返回第二页，我是第二页右上角调出我的</Text>
+                    <Text style={styles.text}>点我返回第二页，我是第二页调出我的</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity

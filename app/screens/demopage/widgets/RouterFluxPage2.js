@@ -4,18 +4,21 @@
 import React, { PureComponent } from 'react';
 import {
     StyleSheet,
-    View,
+    TouchableOpacity,
     Text,
 } from 'react-native';
 import Colors from '../../../resources/Colors'
+import { Actions } from "react-native-router-flux";
 
 export default class RouterFluxPage2 extends PureComponent {
 
     render() {
         return (
-            <View style={styles.container}>
-                <Text style={styles.text}>第二页，请点击右上角</Text>
-            </View>
+            <TouchableOpacity style={styles.container}
+                              onPress={Actions.RouterFluxPage3}
+                              activeOpacity={0.5}>
+                <Text style={styles.text}>第二页，请点击我跳转到第三页</Text>
+            </TouchableOpacity>
         );
     }
 }

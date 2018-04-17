@@ -49,13 +49,17 @@ export default class App extends PureComponent {
             <Router getSceneStyle={getSceneStyle}>
                 <Scene key="modal" component={Modal} hideNavBar>
                     <Scene key="root" hideNavBar>
-                        <Scene key="home" type='replace' initial tabBarPosition='bottom' tabs style={styles.navigationBar}>
+                        <Scene key="home" type='replace' initial tabBarPosition='bottom' tabs
+                               activeTintColor={Colors.primary}
+                               inactiveTintColor={Colors.gray}
+                               style={styles.navigationBar}>
                             <Scene hideBackImage key="MainDemo" title="首页" component={MainDemo}
                                    icon={TabIcon}
-                                   Image={Images.home_button.ic_search_normal}
-                                   selectedImage={Images.home_button.ic_search_select}/>
+                                   Image={Images.home_button.ic_info_normal}
+                                   selectedImage={Images.home_button.ic_info_select}/>
                             <Scene hideBackImage key="MainFound" component={MainFound} title="发现"
                                    icon={TabIcon}
+                                   initial
                                    Image={Images.home_button.ic_search_normal}
                                    selectedImage={Images.home_button.ic_search_select}/>
                             <Scene hideBackImage key="MainCreate" component={MainCreate} title="新建"
@@ -92,25 +96,15 @@ export default class App extends PureComponent {
                     <Scene key="SkipDemo" component={SkipDemo}/>
                     <Scene key="SkipEditNamePage" component={SkipEditNamePage}/>
                     <Scene key="SkipEditAgePage" component={SkipEditAgePage}/>
-                    <Scene hideNavBar>
-                        <Tabs
-                            key="RouterFluxDemo"
-                            swipeEnabled
-                            wrap={false}
-                            // 是否显示标签栏文字
-                            showLabel={false}
-                            tabBarStyle={styles.navigationBar}
-                            //tab选中的颜色
-                            activeBackgroundColor={Colors.primary}
-                            // tab没选中的颜色
-                            inactiveBackgroundColor={Colors.gray}
-                        >
+                    <Scene hideNavBar  key="RouterFluxDemo" tabs
+                           tabBarStyle={styles.tabBarStyle}
+                           labelStyle={styles.routerFluxLabelStyle}
+                           activeTintColor={Colors.primary}
+                           inactiveTintColor={Colors.gray}>
                             <Scene key="RouterFluxPage1" hideNavBar hideBackImage component={RouterFluxPage1} title="第一页" initial={true}/>
                             <Scene key="RouterFluxPage2" hideNavBar hideBackImage component={RouterFluxPage2} title="第二页"/>
                             <Scene key="RouterFluxPage3" hideNavBar hideBackImage component={RouterFluxPage3} title="第三页"/>
-                        </Tabs>
                     </Scene>
-
                 </Scene>
             </Router>
         );
@@ -132,7 +126,16 @@ const styles = StyleSheet.create({
     },
     navigationBar : {
         backgroundColor : 'white',
-    }, titleStyle : {
-        color : Colors.primary,
+    },
+    routerFluxLabelStyle:{
+        marginTop: 5,
+        textAlign: 'center',
+        fontSize: 15
+    },tabBarStyle:{
+        justifyContent : "center",
+        alignItems : "center",
+        paddingBottom:10,
+        height:45,
+        backgroundColor:'white'
     }
 })
