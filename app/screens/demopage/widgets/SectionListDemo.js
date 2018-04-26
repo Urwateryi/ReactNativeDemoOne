@@ -26,7 +26,7 @@ export default class SectionListDemo extends PureComponent {
 
     static navigationOptions = ({ navigation }) => ({
         headerTitle : "SectionListDemo",
-        headerStyle : { backgroundColor : '#fff', height : Platform.OS == "ios" ? 64 : 48 },
+        headerStyle : { backgroundColor : '#fff', height : Platform.OS === "ios" ? 64 : 48 },
     });
 
     //构造函数

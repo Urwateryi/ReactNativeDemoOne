@@ -36,7 +36,7 @@ export default class TxtPicPageDemo extends PureComponent {
 
     static navigationOptions = ({ navigation }) => ({
         headerTitle : "图文列表",
-        headerStyle : { backgroundColor : '#fff', height : Platform.OS == "ios" ? 64 : 48 },
+        headerStyle : { backgroundColor : '#fff', height : Platform.OS === "ios" ? 64 : 48 },
     });
 
     constructor(props) {

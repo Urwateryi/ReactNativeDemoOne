@@ -26,6 +26,7 @@ import SkipDemo from "./widgets/SkipDemo";
 import RouterFluxPage from "./widgets/RouterFluxPage";
 import StateDemo from "./widgets/StateDemo";
 import DifferentItemFlatList from "./widgets/DifferentItemFlatList";
+import MobxDemo from "./widgets/MobxDemo";
 // import RouterFluxDemo from "./widgets/RouterFluxDemo";
 
 var strList = [
@@ -75,6 +76,9 @@ var strList = [
     {
         key : 'WebView',
         action : 'WebViewDemo'
+    },{
+        key : 'Mobx',
+        action : 'MobxDemo'
     },
     {
         key : 'Storage',
@@ -87,6 +91,9 @@ var strList = [
     {
         key : 'Refresh',
         action : 'RefreshDemo'
+    }, {
+        key : '多样式FlatList',
+        action : 'DifferentItemFlatList'
     },
     {
         key : 'CheckBox',
@@ -135,9 +142,6 @@ var strList = [
     {
         key : '动画',
         action : 'AnimateDemo'
-    }, {
-        key : '多样式FlatList',
-        action : 'DifferentItemFlatList'
     },
     {
         key : '进度圈',

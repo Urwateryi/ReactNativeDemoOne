@@ -27,7 +27,7 @@ export default class StorageDemo extends PureComponent {
 
     static navigationOptions = ({navigation}) => ({
         headerTitle: "StorageDemo",
-        headerStyle: {backgroundColor: '#fff', height: Platform.OS == "ios" ? 64 : 48},
+        headerStyle: {backgroundColor: '#fff', height: Platform.OS === "ios" ? 64 : 48},
     });
 
     _add(){

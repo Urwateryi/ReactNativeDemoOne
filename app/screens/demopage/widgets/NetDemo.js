@@ -31,7 +31,7 @@ export default class NetDemo extends PureComponent {
 
     static navigationOptions = ({ navigation }) => ({
         headerTitle : "测试网络请求",
-        headerStyle : { backgroundColor : '#fff', height : Platform.OS == "ios" ? 64 : 48 },
+        headerStyle : { backgroundColor : '#fff', height : Platform.OS === "ios" ? 64 : 48 },
     });
 
     constructor(props) {

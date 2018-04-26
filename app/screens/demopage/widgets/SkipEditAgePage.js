@@ -24,7 +24,7 @@ export default class SkipEditAgePage extends PureComponent {
         headerRight : (
             <Text style={styles.title_right}>保存</Text>
         ),
-        headerStyle : { backgroundColor : '#fff', height : Platform.OS == "ios" ? 64 : 48 },
+        headerStyle : { backgroundColor : '#fff', height : Platform.OS === "ios" ? 64 : 48 },
     });
 
     render() {

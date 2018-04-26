@@ -11,7 +11,7 @@ export default class ToastDemo extends PureComponent {
 
     static navigationOptions = ({navigation}) => ({
         headerTitle: "测试Toast",
-        headerStyle: {backgroundColor: '#fff', height: Platform.OS == "ios" ? 64 : 48},
+        headerStyle: {backgroundColor: '#fff', height: Platform.OS === "ios" ? 64 : 48},
     });
 
     render() {

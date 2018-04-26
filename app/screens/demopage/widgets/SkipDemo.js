@@ -17,7 +17,7 @@ export default class SkipDemo extends PureComponent {
 
     static navigationOptions = ({ navigation }) => ({
         headerTitle : "页面跳转",
-        headerStyle : { backgroundColor : '#fff', height : Platform.OS == "ios" ? 64 : 48 },
+        headerStyle : { backgroundColor : '#fff', height : Platform.OS === "ios" ? 64 : 48 },
     });
 
     constructor(props) {

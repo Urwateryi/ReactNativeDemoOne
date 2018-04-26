@@ -24,7 +24,7 @@ export default class ScrollViewDemo extends PureComponent {
 
     static navigationOptions = ({ navigation }) => ({
         headerTitle : "ScrollViewDemo",
-        headerStyle : { backgroundColor : '#fff', height : Platform.OS == "ios" ? 64 : 48 },
+        headerStyle : { backgroundColor : '#fff', height : Platform.OS === "ios" ? 64 : 48 },
     });
 
     constructor(props) {

@@ -20,7 +20,7 @@ export default class RefDemo extends PureComponent {
 
     static navigationOptions = ({navigation}) => ({
         headerTitle: "RefDemo",
-        headerStyle: {backgroundColor: '#fff', height: Platform.OS == "ios" ? 64 : 48},
+        headerStyle: {backgroundColor: '#fff', height: Platform.OS === "ios" ? 64 : 48},
     });
 
     //构造函数
@@ -34,7 +34,7 @@ export default class RefDemo extends PureComponent {
 
     _onButtonPress() {
         this.setState({ count:this.state.count+1})
-        if (this.state.count% 2==0){
+        if (this.state.count% 2===0){
             this.setState({pic:Images.other_test.bg_beauty})
             this.refs.changeme.setNativeProps({
                 width: 80,

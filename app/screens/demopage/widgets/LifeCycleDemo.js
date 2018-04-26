@@ -11,7 +11,7 @@ export default class LifeCycleDemo extends PureComponent {
 
     static navigationOptions = ({navigation}) => ({
         headerTitle: "生命周期",
-        headerStyle: {backgroundColor: '#fff', height: Platform.OS == "ios" ? 64 : 48},
+        headerStyle: {backgroundColor: '#fff', height: Platform.OS === "ios" ? 64 : 48},
     });
 
     render() {

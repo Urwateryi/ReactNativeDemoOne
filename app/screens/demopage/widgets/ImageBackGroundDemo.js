@@ -26,7 +26,7 @@ export default class ImageBackGroundDemo extends PureComponent {
 
     static navigationOptions = ({navigation}) => ({
         headerTitle: "ImageBackGroundDemo",
-        headerStyle: {backgroundColor: '#fff', height: Platform.OS == "ios" ? 64 : 48},
+        headerStyle: {backgroundColor: '#fff', height: Platform.OS === "ios" ? 64 : 48},
     });
 
     _click0() {

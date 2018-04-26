@@ -22,7 +22,7 @@ export default class InputDemo extends PureComponent {
 
     static navigationOptions = ({navigation}) => ({
         headerTitle: "InputDemo",
-        headerStyle: {backgroundColor: '#fff', height: Platform.OS == "ios" ? 64 : 48},
+        headerStyle: {backgroundColor: '#fff', height: Platform.OS === "ios" ? 64 : 48},
     });
 
     //构造函数

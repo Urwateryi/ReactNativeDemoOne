@@ -78,7 +78,7 @@ var pic_local,pic_net,pic_res,type;
 export default class ImageDemo extends PureComponent {
     static navigationOptions = ({navigation}) => ({
         headerTitle: "ImageDemo",
-        headerStyle: {backgroundColor: '#fff', height: Platform.OS == "ios" ? 64 : 48},
+        headerStyle: {backgroundColor: '#fff', height: Platform.OS === "ios" ? 64 : 48},
     });
 
     //构造函数

@@ -14,7 +14,7 @@ export default class RefreshDemo extends PureComponent {
 
     static navigationOptions = ({navigation}) => ({
         headerTitle: "RefreshDemo",
-        headerStyle: {backgroundColor: '#fff', height: Platform.OS == "ios" ? 64 : 48},
+        headerStyle: {backgroundColor: '#fff', height: Platform.OS === "ios" ? 64 : 48},
     });
 
     constructor(props){

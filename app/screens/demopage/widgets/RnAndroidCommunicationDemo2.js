@@ -34,7 +34,7 @@ import {
 export class RnAndroidCommunicationDemo extends PureComponent{
     static navigationOptions = ({navigation}) => ({
         headerTitle: "RN与原生交互",
-        headerStyle: {backgroundColor: '#fff', height: Platform.OS == "ios" ? 64 : 48},
+        headerStyle: {backgroundColor: '#fff', height: Platform.OS === "ios" ? 64 : 48},
     });
 
     componentWillMount(){

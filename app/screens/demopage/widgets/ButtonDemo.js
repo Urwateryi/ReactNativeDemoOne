@@ -23,7 +23,7 @@ export default class ButtonDemo extends PureComponent {
 
     static navigationOptions = ({navigation}) => ({
         headerTitle: "ButtonDemo",
-        headerStyle: {backgroundColor: '#fff', height: Platform.OS == "ios" ? 64 : 48},
+        headerStyle: {backgroundColor: '#fff', height: Platform.OS === "ios" ? 64 : 48},
     });
 
     //构造函数

@@ -61,7 +61,7 @@ export default class TextDemo extends PureComponent {
 
     static navigationOptions = ({navigation}) => ({
         headerTitle: "TextDemo",
-        headerStyle: {backgroundColor: '#fff', height: Platform.OS == "ios" ? 64 : 48},
+        headerStyle: {backgroundColor: '#fff', height: Platform.OS === "ios" ? 64 : 48},
     });
 
     _onPress(toast){
