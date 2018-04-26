@@ -2,14 +2,13 @@ import React, { PureComponent } from "react";
 import {
     Router,
     Scene,
-    Modal,
-    Tabs
+    Lightbox,
+    Modal
 } from 'react-native-router-flux'
 
 import Images from "./resources/Images";
-import TabBarItem from './components/TabBarItem';
 import Colors from "./resources/Colors";
-import { Platform, StyleSheet } from "react-native";
+import { StyleSheet } from "react-native";
 import TabIcon from './components/TabIcon'
 
 import MainDemo from "./screens/demopage/MainDemo";
@@ -20,7 +19,6 @@ import MainMine from './screens/minepage/MainMine'
 
 import TextDemo from './screens/demopage/widgets/TextDemo'
 import ImageDemo from './screens/demopage/widgets/ImageDemo'
-// import CameraDemo from "./screens/demopage/widgets/CameraDemo";
 import ImageBackGroundDemo from "./screens/demopage/widgets/ImageBackGroundDemo";
 import InputDemo from "./screens/demopage/widgets/InputDemo";
 import ButtonDemo from "./screens/demopage/widgets/ButtonDemo";
@@ -42,6 +40,9 @@ import SkipEditAgePage from "./screens/demopage/widgets/SkipEditAgePage";
 import RouterFluxPage3 from "./screens/demopage/widgets/RouterFluxPage3";
 import RouterFluxPage1 from "./screens/demopage/widgets/RouterFluxPage1";
 import RouterFluxPage2 from "./screens/demopage/widgets/RouterFluxPage2";
+import RouterFluxPage from "./screens/demopage/widgets/RouterFluxPage";
+import StateDemo from "./screens/demopage/widgets/StateDemo";
+import DifferentItemFlatList from "./screens/demopage/widgets/DifferentItemFlatList";
 
 export default class App extends PureComponent {
     render() {
@@ -55,11 +56,11 @@ export default class App extends PureComponent {
                                style={styles.navigationBar}>
                             <Scene hideBackImage key="MainDemo" title="首页" component={MainDemo}
                                    icon={TabIcon}
+                                   initial
                                    Image={Images.home_button.ic_info_normal}
                                    selectedImage={Images.home_button.ic_info_select}/>
                             <Scene hideBackImage key="MainFound" component={MainFound} title="发现"
                                    icon={TabIcon}
-                                   initial
                                    Image={Images.home_button.ic_search_normal}
                                    selectedImage={Images.home_button.ic_search_select}/>
                             <Scene hideBackImage key="MainCreate" component={MainCreate} title="新建"
@@ -96,15 +97,18 @@ export default class App extends PureComponent {
                     <Scene key="SkipDemo" component={SkipDemo}/>
                     <Scene key="SkipEditNamePage" component={SkipEditNamePage}/>
                     <Scene key="SkipEditAgePage" component={SkipEditAgePage}/>
-                    <Scene hideNavBar  key="RouterFluxDemo" tabs
+                    <Scene hideNavBar key="RouterFluxDemo" tabs
                            tabBarStyle={styles.tabBarStyle}
                            labelStyle={styles.routerFluxLabelStyle}
                            activeTintColor={Colors.primary}
                            inactiveTintColor={Colors.gray}>
-                            <Scene key="RouterFluxPage1" hideNavBar hideBackImage component={RouterFluxPage1} title="第一页" initial={true}/>
-                            <Scene key="RouterFluxPage2" hideNavBar hideBackImage component={RouterFluxPage2} title="第二页"/>
-                            <Scene key="RouterFluxPage3" hideNavBar hideBackImage component={RouterFluxPage3} title="第三页"/>
+                        <Scene key="RouterFluxPage1" hideNavBar hideBackImage component={RouterFluxPage1} title="第一页" initial={true}/>
+                        <Scene key="RouterFluxPage2" hideNavBar hideBackImage component={RouterFluxPage2} title="第二页"/>
+                        <Scene key="RouterFluxPage3" hideNavBar hideBackImage component={RouterFluxPage3} title="第三页"/>
                     </Scene>
+                    <Scene key="RouterFluxPage" component={RouterFluxPage}/>
+                    <Scene key="StateDemo" component={StateDemo}/>
+                    <Scene key="DifferentItemFlatList" component={DifferentItemFlatList}/>
                 </Scene>
             </Router>
         );
@@ -127,15 +131,15 @@ const styles = StyleSheet.create({
     navigationBar : {
         backgroundColor : 'white',
     },
-    routerFluxLabelStyle:{
-        marginTop: 5,
-        textAlign: 'center',
-        fontSize: 15
-    },tabBarStyle:{
+    routerFluxLabelStyle : {
+        marginTop : 5,
+        textAlign : 'center',
+        fontSize : 15
+    }, tabBarStyle : {
         justifyContent : "center",
         alignItems : "center",
-        paddingBottom:10,
-        height:45,
-        backgroundColor:'white'
+        paddingBottom : 10,
+        height : 45,
+        backgroundColor : 'white'
     }
 })

@@ -1,7 +1,7 @@
 /**
  * Description:引导页
  */
-import React, {PureComponent} from 'react';
+import React, { PureComponent } from 'react';
 import {
     StyleSheet,
     FlatList,
@@ -10,7 +10,7 @@ import {
     Text
 } from 'react-native';
 
-import {Actions} from 'react-native-router-flux'
+import { Actions } from 'react-native-router-flux'
 
 import ImageBackGroundDemo from "./widgets/ImageBackGroundDemo";
 import InputDemo from "./widgets/InputDemo";
@@ -23,140 +23,153 @@ import AnimateDemo from "./widgets/AnimateDemo";
 import LifeCycleDemo from "./widgets/LifeCycleDemo";
 import { RnAndroidCommunicationDemo } from "./widgets/RnAndroidCommunicationDemo";
 import SkipDemo from "./widgets/SkipDemo";
+import RouterFluxPage from "./widgets/RouterFluxPage";
+import StateDemo from "./widgets/StateDemo";
+import DifferentItemFlatList from "./widgets/DifferentItemFlatList";
 // import RouterFluxDemo from "./widgets/RouterFluxDemo";
 
-var strList=[
+var strList = [
     {
-        key:'Text',
-        action:'TextDemo'
+        key : 'Text',
+        action : 'TextDemo'
     },
     {
-        key:'Image',
-        action:'ImageDemo'
+        key : 'Image',
+        action : 'ImageDemo'
     },
     {
-        key:'Camera',
-        action:''
+        key : 'Camera',
+        action : ''
     },
     {
-        key:'ImageBackground ',
-        action:'ImageBackGroundDemo'
+        key : 'ImageBackground ',
+        action : 'ImageBackGroundDemo'
     },
     {
-        key:'Input',
-        action:'InputDemo'
+        key : 'Input',
+        action : 'InputDemo'
     },
     {
-        key:'Button',
-        action:'ButtonDemo'
+        key : 'Button',
+        action : 'ButtonDemo'
     },
     {
-        key:'ScrollView',
-        action:'ScrollViewDemo'
+        key : 'ScrollView',
+        action : 'ScrollViewDemo'
     },
     {
-        key:'RouterFlux',
-        action:'RouterFluxDemo'
+        key : 'StateDemo',
+        action : 'StateDemo'
     },
     {
-        key:'Ref',
-        action:'RefDemo'
+        key : 'RouterFlux',
+        action : 'RouterFluxDemo'
+    }, {
+        key : 'RouterFlux2',
+        action : 'RouterFluxPage'
     },
     {
-        key:'WebView',
-        action:'WebViewDemo'
+        key : 'Ref',
+        action : 'RefDemo'
     },
     {
-        key:'Storage',
-        action:'StorageDemo'
+        key : 'WebView',
+        action : 'WebViewDemo'
     },
     {
-        key:'Picker',
-        action:'PickerDemo'
+        key : 'Storage',
+        action : 'StorageDemo'
     },
     {
-        key:'Refresh',
-        action:'RefreshDemo'
+        key : 'Picker',
+        action : 'PickerDemo'
     },
     {
-        key:'CheckBox',
-        action:'CheckBoxDemo'
+        key : 'Refresh',
+        action : 'RefreshDemo'
     },
     {
-        key:'Toast',
-        action:'ToastDemo'
+        key : 'CheckBox',
+        action : 'CheckBoxDemo'
     },
     {
-        key:'Video',
-        action:'VideoDemo'
+        key : 'Toast',
+        action : 'ToastDemo'
     },
     {
-        key:'Media',
-        action:'MediaDemo'
+        key : 'Video',
+        action : 'VideoDemo'
     },
     {
-        key:'Swiper',
-        action:'SwiperDemo'
+        key : 'Media',
+        action : 'MediaDemo'
     },
     {
-        key:'长列表FlatList',
-        action:'FlatListDemo'
+        key : 'Swiper',
+        action : 'SwiperDemo'
     },
     {
-        key:'分组列表SectionList',
-        action:'SectionListDemo'
+        key : '长列表FlatList',
+        action : 'FlatListDemo'
     },
     {
-        key:'图文列表',
-        action:'TxtPicPageDemo'
+        key : '分组列表SectionList',
+        action : 'SectionListDemo'
     },
     {
-        key:'页面跳转，数据回传',
-        action:'SkipDemo'
+        key : '图文列表',
+        action : 'TxtPicPageDemo'
     },
     {
-        key:'网络请求',
-        action:'NetDemo'
+        key : '页面跳转，数据回传',
+        action : 'SkipDemo'
     },
     {
-        key:'生命周期',
-        action:'LifeCycleDemo'
+        key : '网络请求',
+        action : 'NetDemo'
     },
     {
-        key:'动画',
-        action:'AnimateDemo'
+        key : '生命周期',
+        action : 'LifeCycleDemo'
     },
     {
-        key:'进度圈',
-        action:'AnimateDemo'
+        key : '动画',
+        action : 'AnimateDemo'
+    }, {
+        key : '多样式FlatList',
+        action : 'DifferentItemFlatList'
     },
     {
-        key:'自定义控件',
-        action:'CustomCompontDemo'
+        key : '进度圈',
+        action : 'AnimateDemo'
     },
     {
-        key:'聚合页面',
-        action:'此页面主要测试聚合页面'
+        key : '自定义控件',
+        action : 'CustomCompontDemo'
     },
     {
-        key:'与Android交互',
-        action:'RnAndroidCommunicationDemo'
+        key : '聚合页面',
+        action : '此页面主要测试聚合页面'
     },
     {
-        key:'与iOS交互',
-        action:'此页面主要测试与原生iOS交互'
+        key : '与Android交互',
+        action : 'RnAndroidCommunicationDemo'
     },
     {
-        key:'热更新',
-        action:'此页面主要测试与原生iOS交互'
+        key : '与iOS交互',
+        action : '此页面主要测试与原生iOS交互'
     },
     {
-        key:'打包',
-        action:'PickUpDemo'
+        key : '热更新',
+        action : '此页面主要测试与原生iOS交互'
+    },
+    {
+        key : '打包',
+        action : 'PickUpDemo'
     },
 ];
 
-export default class MainDemo extends PureComponent{
+export default class MainDemo extends PureComponent {
     render() {
         return (
             <View style={styles.container}>
@@ -173,9 +186,9 @@ export default class MainDemo extends PureComponent{
     _keyExtractor = (item) => item.key;
 
     //列表的每一行
-    renderItem({item}) {
+    renderItem({ item }) {
         return (
-            <TouchableOpacity activeOpacity={1} onPress={()=>this.clickItem(item)}>
+            <TouchableOpacity activeOpacity={1} onPress={() => this.clickItem(item)}>
                 <Text style={styles.item}>{item.key}</Text>
             </TouchableOpacity>
         )
@@ -190,29 +203,29 @@ export default class MainDemo extends PureComponent{
 
         //跳转方法二（使用react-navigation）：
         // jumpPager(this.props.navigation.navigate,item.action)
-        
+
         //跳转方法三（使用flux）：
         Actions.push(item.action)
     }
 }
 
-const styles=StyleSheet.create({
-    container:{
-        flex:1,
-        backgroundColor:Colors.bg,
+const styles = StyleSheet.create({
+    container : {
+        flex : 1,
+        backgroundColor : Colors.bg,
     },
-    item:{
-        alignItems:'center',
-        justifyContent:'center',
-        padding:10,
-        fontSize:18,
-        backgroundColor:'white',
-        height:55,
-        borderBottomWidth: 1,
-        borderBottomColor:Colors.border
-    }, one: {
-        fontSize: 30,
-        textAlign: 'center',
-        color: Colors.gray,
+    item : {
+        alignItems : 'center',
+        justifyContent : 'center',
+        padding : 10,
+        fontSize : 18,
+        backgroundColor : 'white',
+        height : 55,
+        borderBottomWidth : 1,
+        borderBottomColor : Colors.border
+    }, one : {
+        fontSize : 30,
+        textAlign : 'center',
+        color : Colors.gray,
     }
 });
