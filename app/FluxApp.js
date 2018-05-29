@@ -44,6 +44,8 @@ import RouterFluxPage from "./screens/demopage/widgets/RouterFluxPage";
 import StateDemo from "./screens/demopage/widgets/StateDemo";
 import DifferentItemFlatList from "./screens/demopage/widgets/DifferentItemFlatList";
 import MobxDemo from "./screens/demopage/widgets/MobxDemo";
+import PageLoad from "./screens/demopage/widgets/PageLoad";
+import TestPageLoad from "./screens/demopage/widgets/TestPageLoad";
 
 export default class App extends PureComponent {
     render() {
@@ -111,6 +113,8 @@ export default class App extends PureComponent {
                     <Scene key="StateDemo" component={StateDemo}/>
                     <Scene key="DifferentItemFlatList" component={DifferentItemFlatList}/>
                     <Scene key="MobxDemo" component={MobxDemo}/>
+                    <Scene key="PageLoad" component={PageLoad}/>
+                    <Scene key="TestPageLoad" component={TestPageLoad}/>
                 </Scene>
             </Router>
         );

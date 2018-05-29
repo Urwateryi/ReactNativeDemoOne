@@ -47,5 +47,9 @@ export default {
 
     title:{
         ic_setting:require('./imgs/ic_setting.png')
+    },
+    all:{
+        loading:require('./imgs/loading.gif'),
+        loading2:require('./imgs/loading2.gif'),
     }
 }
