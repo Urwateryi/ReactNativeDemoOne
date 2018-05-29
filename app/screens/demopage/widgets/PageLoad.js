@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     },
     txt:{
         color:'black',
-        fontSize:'40',
+        fontSize:40,
         fontWeight :'200'
     },
 });
