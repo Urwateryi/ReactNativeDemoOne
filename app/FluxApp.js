@@ -46,6 +46,7 @@ import DifferentItemFlatList from "./screens/demopage/widgets/DifferentItemFlatL
 import MobxDemo from "./screens/demopage/widgets/MobxDemo";
 import PageLoad from "./screens/demopage/widgets/PageLoad";
 import TestPageLoad from "./screens/demopage/widgets/TestPageLoad";
+import HocDemo from "./screens/demopage/widgets/HocDemo";
 
 export default class App extends PureComponent {
     render() {
@@ -115,6 +116,7 @@ export default class App extends PureComponent {
                     <Scene key="MobxDemo" component={MobxDemo}/>
                     <Scene key="PageLoad" component={PageLoad}/>
                     <Scene key="TestPageLoad" component={TestPageLoad}/>
+                    <Scene key="HocDemo" component={HocDemo}/>
                 </Scene>
             </Router>
         );

@@ -28,7 +28,7 @@ import StateDemo from "./widgets/StateDemo";
 import DifferentItemFlatList from "./widgets/DifferentItemFlatList";
 import MobxDemo from "./widgets/MobxDemo";
 import TestPageLoad from "./widgets/TestPageLoad";
-// import RouterFluxDemo from "./widgets/RouterFluxDemo";
+import HocDemo from "./widgets/HocDemo";
 
 var strList = [
     {
@@ -92,6 +92,10 @@ var strList = [
     {
         key : 'Picker',
         action : 'PickerDemo'
+    },
+    {
+        key : 'Hoc',
+        action : 'HocDemo'
     },
     {
         key : 'Refresh',

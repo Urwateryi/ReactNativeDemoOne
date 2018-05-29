@@ -56,7 +56,9 @@ import ApiAddress from '../../../config/ApiAddress'
 import {
     LOGIN_NAME
 } from "../../../config/Constants";
+import propsProxyHoc from "../../../hocs/propsProxyHoc";
 
+@propsProxyHoc
 export default class TextDemo extends PureComponent {
 
     static navigationOptions = ({navigation}) => ({
