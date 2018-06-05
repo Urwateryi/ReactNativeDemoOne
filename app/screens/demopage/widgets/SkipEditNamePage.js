@@ -1,6 +1,7 @@
 import { Platform, StyleSheet, View, TextInput, Text,TouchableOpacity,ToastAndroid } from "react-native";
 import React, { PureComponent } from "react";
 import Colors from "../../../resources/Colors";
+import BaseComponent from "../../../base/BaseComponent";
 
 /**
  * Description:SkipDemo的子页面，主要用于接收上一级页面传过来的数据，并在修改后回传
@@ -8,38 +9,26 @@ import Colors from "../../../resources/Colors";
  * Author: zoe
  * Time: 2018/4/10 0010
  */
-export default class SkipEditNamePage extends PureComponent {
+export default class SkipEditNamePage extends BaseComponent {
 
     constructor(props) {
         super(props);
-        this.onEndReachedCalledDuringMomentum = true;
         //状态机
         this.state = {
             content : '',
         }
     }
 
-    componentDidMount(){
-        //在static中访问this，需要在componentDidMount中动态的添加点击事件
-        this.props.navigation.setParams({navigatePress:this.onSubmit})
+    initTitle(){
+        this.setTitleCenter("编辑姓名");
+        this.setRightTxtRightVisible("保存");
     }
 
-    onSubmit(){
-        ToastAndroid.show("点击了保存",ToastAndroid.SHORT);
+    onClickRightTxtRight(){
+        ToastAndroid.show('保存'+this.state.content,ToastAndroid.SHORT)
     }
 
-    static navigationOptions = ({ navigation }) => (
-        {
-        headerTitle : "编辑姓名",
-        headerRight : (
-            <TouchableOpacity activeOpacity={0.5} onPress={()=>navigation.state.params.navigatePress()}>
-                <Text style={styles.title_right}>保存</Text>
-            </TouchableOpacity>
-        ),
-        headerStyle : { backgroundColor : '#fff', height : Platform.OS == "ios" ? 64 : 48 },
-    });
-
-    render() {
+    renderComponent() {
         return (
             <View style={styles.container}>
                 <View style={styles.item}>
@@ -47,7 +36,7 @@ export default class SkipEditNamePage extends PureComponent {
                     <TextInput
                         placeholder='请输入你的姓名'
                         maxLength={15}
-                        value={this.props.navigation.state.params.name}
+                        value={this.props.name}
                         onChangeText={(event) => this.setState({ content : event })}
                         placeholderTextColor={Colors.bright_gray}
                         underlineColorAndroid='transparent' //设置下划线背景色透明 达到去掉下划线的效果

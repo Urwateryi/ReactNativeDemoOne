@@ -49,6 +49,7 @@ export default {
         ic_setting:require('./imgs/ic_setting.png')
     },
     all:{
+        ic_back:require('./imgs/ic_back.png'),
         loading:require('./imgs/loading.gif'),
         loading2:require('./imgs/loading2.gif'),
     }

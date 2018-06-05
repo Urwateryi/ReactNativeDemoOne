@@ -47,6 +47,9 @@ import MobxDemo from "./screens/demopage/widgets/MobxDemo";
 import PageLoad from "./screens/demopage/widgets/PageLoad";
 import TestPageLoad from "./screens/demopage/widgets/TestPageLoad";
 import HocDemo from "./screens/demopage/widgets/HocDemo";
+import BaseComponent from "./base/BaseComponent";
+import FatherComponent from "./screens/demopage/widgets/FatherComponent";
+import ChildComponent from "./screens/demopage/widgets/ChildComponent";
 
 export default class App extends PureComponent {
     render() {
@@ -117,6 +120,9 @@ export default class App extends PureComponent {
                     <Scene key="PageLoad" component={PageLoad}/>
                     <Scene key="TestPageLoad" component={TestPageLoad}/>
                     <Scene key="HocDemo" component={HocDemo}/>
+                    <Scene key="BaseComponent" component={BaseComponent}/>
+                    <Scene key="FatherComponent" component={FatherComponent}/>
+                    <Scene key="ChildComponent" component={ChildComponent}/>
                 </Scene>
             </Router>
         );

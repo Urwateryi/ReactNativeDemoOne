@@ -12,5 +12,8 @@ export default {
     gray:'#333333',
     light_gray:'#777777',
     bright_gray:'#999999',
-    dark_gray:'#222222'
+    dark_gray:'#222222',
+    black : '#333333',
+    trans_gray : '#22444444',
+    white : '#ffffff',
 }

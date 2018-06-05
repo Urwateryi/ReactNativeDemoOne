@@ -55,7 +55,7 @@ export default class SkipDemo extends PureComponent {
      */
     onSkipToEditName(content) {
         // jumpPager(this.props.navigation.navigate,'SkipEditNamePage',{name:content})
-        Actions.push('SkipEditNamePage',{name:content})
+        Actions.SkipEditNamePage({'name':content})
     }
 
     /**
